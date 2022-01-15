@@ -40,7 +40,7 @@ const ContactCard = (props) => {
 						data-original-title=""
 						title=""></span>
 					<span className="text-muted small text-truncate">
-						mike.ana@example.com
+						{props.email.fullEmail}
 					</span>
 				</div>
 			</div>

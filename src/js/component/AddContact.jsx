@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const AddContact = (props) => {
 	const [contact, setContact] = useState({});
+	const [email, setEmail] = useState({});
 	return (
 		<div className="container">
 			<div>
@@ -28,6 +29,13 @@ const AddContact = (props) => {
 							type="email"
 							className="form-control"
 							placeholder="Enter email"
+							onChange={(e) =>
+								setEmail({
+									...email,
+									fullEmail: e.target.value,
+								})
+							}
+							value={email.fullEmail}
 						/>
 					</div>
 					<div className="form-group">
@@ -48,7 +56,7 @@ const AddContact = (props) => {
 					</div>
 					<button
 						type="button"
-						onClick={() => props.onSave(contact)}
+						onClick={() => props.onSave(contact, email)}
 						className="btn btn-primary form-control">
 						save
 					</button>

@@ -5,6 +5,7 @@ import AddContact from "./AddContact.jsx";
 
 const Home = () => {
 	const [contacts, setContacts] = useState([]);
+
 	const saveContact = (contactToSave) => {
 		setContacts(contacts.concat(contactToSave));
 	};

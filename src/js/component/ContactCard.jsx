@@ -25,14 +25,18 @@ const ContactCard = (props) => {
 					</label>
 					<br />
 					<i className="fas fa-map-marker-alt text-muted mr-3"></i>
-					<span className="text-muted">5842 Hillcrest Rd</span>
+					<span className="text-muted">
+						{props.contact.fullAddress}
+					</span>
 					<br />
 					<span
 						className="fa fa-phone fa-fw text-muted mr-3"
 						data-toggle="tooltip"
 						title=""
 						data-original-title="(870) 288-4149"></span>
-					<span className="text-muted small">(870) 288-4149</span>
+					<span className="text-muted small">
+						{props.contact.phoneNumber}
+					</span>
 					<br />
 					<span
 						className="fa fa-envelope fa-fw text-muted mr-3"
@@ -40,7 +44,7 @@ const ContactCard = (props) => {
 						data-original-title=""
 						title=""></span>
 					<span className="text-muted small text-truncate">
-						{props.email.fullEmail}
+						{props.contact.fullEmail}
 					</span>
 				</div>
 			</div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const ContactCard = () => {
+const ContactCard = (props) => {
 	return (
 		<li className="list-group-item">
 			<div className="row w-100">
@@ -13,18 +13,16 @@ const ContactCard = () => {
 				</div>
 				<div className="col-12 col-sm-6 col-md-9 text-center text-sm-left">
 					<div className=" float-right">
-						<button
-							className="btn"
-						>
+						<button className="btn">
 							<i className="fas fa-pencil-alt mr-3"></i>
 						</button>
-						<button
-							className="btn"
-                        >
+						<button className="btn">
 							<i className="fas fa-trash-alt"></i>
 						</button>
 					</div>
-					<label className="name lead">Mike Anamendolla</label>
+					<label className="name lead">
+						{props.contact.fullName}
+					</label>
 					<br />
 					<i className="fas fa-map-marker-alt text-muted mr-3"></i>
 					<span className="text-muted">5842 Hillcrest Rd</span>

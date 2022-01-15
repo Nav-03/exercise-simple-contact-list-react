@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
-const AddContact = () => {
+const AddContact = (props) => {
+	const [contact, setContact] = useState({});
 	return (
 		<div className="container">
 			<div>
@@ -12,6 +13,13 @@ const AddContact = () => {
 							type="text"
 							className="form-control"
 							placeholder="Full Name"
+							onChange={(e) =>
+								setContact({
+									...contact,
+									fullName: e.target.value,
+								})
+							}
+							value={contact.fullName}
 						/>
 					</div>
 					<div className="form-group">
@@ -40,6 +48,7 @@ const AddContact = () => {
 					</div>
 					<button
 						type="button"
+						onClick={() => props.onSave(contact)}
 						className="btn btn-primary form-control">
 						save
 					</button>

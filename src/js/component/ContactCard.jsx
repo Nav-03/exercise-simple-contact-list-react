@@ -6,8 +6,8 @@ const ContactCard = (props) => {
 			<div className="row w-100">
 				<div className="col-12 col-sm-6 col-md-3 px-0">
 					<img
-						src="http://demos.themes.guide/bodeo/assets/images/users/m101.jpg"
-						alt="Mike Anamendolla"
+						src="https://media.istockphoto.com/vectors/vector-businessman-black-silhouette-isolated-vector-id610003972?k=20&m=610003972&s=612x612&w=0&h=-Nftbu4sDVavoJTq5REPpPpV-kXH9hXXE3xg_D3ViKE="
+						alt={props.contact.fullName}
 						className="rounded-circle mx-auto d-block img-fluid"
 					/>
 				</div>

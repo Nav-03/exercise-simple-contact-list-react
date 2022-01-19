@@ -5,6 +5,8 @@ import AddContact from "./AddContact.jsx";
 
 const Home = () => {
 	const [contacts, setContacts] = useState([]);
+	const [contactToUpdate, setContactToUpdate] = useState(null);
+
 	const [modalIsOpen, setModalIsOpen] = useState(false);
 
 	const saveContact = (contactToSave) => {
@@ -16,13 +18,26 @@ const Home = () => {
 			contacts.filter((item, index) => contactToDelete !== index)
 		);
 	};
+	const updateContact = (updatedContact) => {
+		setContacts(
+			contacts.map((oldContact, index) => {
+				if (contactToUpdate.index === index) return updatedContact;
+				else return oldContact;
+			})
+		);
+		setModalIsOpen(false);
+		setContactToUpdate(null);
+	};
 
 	return (
 		<div className="container">
 			<div>
 				<p className="text-right my-3">
-					{modalIsOpen === true ? (
-						<AddContact onSave={saveContact} />
+					{modalIsOpen === true || contactToUpdate !== null ? (
+						<AddContact
+							onSave={saveContact}
+							contact={updateContact}
+						/>
 					) : (
 						<button
 							type="button"
@@ -41,6 +56,9 @@ const Home = () => {
 							<ContactCard
 								contact={c}
 								onDelete={() => deleteContact(i)}
+								onUpdate={(contact) =>
+									setContactToUpdate(contact)
+								}
 							/>
 						))}
 					</ul>

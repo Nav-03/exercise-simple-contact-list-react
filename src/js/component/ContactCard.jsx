@@ -16,7 +16,9 @@ const ContactCard = (props) => {
 						<button className="btn">
 							<i className="fas fa-pencil-alt mr-3"></i>
 						</button>
-						<button className="btn">
+						<button
+							className="btn"
+							onClick={() => props.onDelete()}>
 							<i className="fas fa-trash-alt"></i>
 						</button>
 					</div>

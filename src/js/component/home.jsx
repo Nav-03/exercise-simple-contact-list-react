@@ -56,8 +56,8 @@ const Home = () => {
 							<ContactCard
 								contact={c}
 								onDelete={() => deleteContact(i)}
-								onUpdate={(contact) =>
-									setContactToUpdate(contact)
+								onUpdate={() =>
+									setContactToUpdate(updateContact)
 								}
 							/>
 						))}
